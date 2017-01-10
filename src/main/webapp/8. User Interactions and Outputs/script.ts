@@ -30,25 +30,28 @@ let joke = new Joke("What did the cheese say when it looked in the mirror?","Hel
   <div class="form-group">
     <input type="text"
            class="form-control"
-           placeholder="Enter the setup">
+           placeholder="Enter the setup"
+           #setup>
   </div>
   <div class="form-group">
     <input type="text"
            class="form-control"
-           placeholder="Enter the punchline">
+           placeholder="Enter the punchline"
+           #punchline>
   </div>
   <button type="button"
           class="btn btn-primary"
-          (click)="createJoke()">Create
+          (click)="createJoke(setup.value,punchline.value)">Create
   </button>
 </div>
   `
+  //Note:setup and puchline variables are only seen within the template only
 })
 class JokeFormComponent {
   @Output() jokeCreated=new EventEmitter<Joke>();
   
-  createJoke(){
-    this.jokeCreated.emit(new Joke("A Setup","A punchline"));
+  createJoke(setup: string, punchline: string){
+    this.jokeCreated.emit(new Joke(setup,punchline));
   }
 }
 
