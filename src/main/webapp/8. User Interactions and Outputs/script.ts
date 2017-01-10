@@ -2,7 +2,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {Component, Input} from '@angular/core';
-
+import {EventEmitter, Output} from '@angular/core';
 
 class Joke{
   setup: string;
@@ -44,7 +44,7 @@ let joke = new Joke("What did the cheese say when it looked in the mirror?","Hel
   `
 })
 class JokeFormComponent {
-  
+  @Output() jokeCreated=new EventEmitter<Joke>();
 }
 
 
