@@ -11,7 +11,8 @@ import {Component} from '@angular/core';
 	<h4 class="card-title">{{joke.setup}}</h4>
 	<p class="card-text"
 	   [hidden]="joke.hide">{{joke.punchline}}</p>
-	<button class="btn btn-warning">Tell Me</button>
+	<button class="btn btn-primary"
+	    (click)="joke.hide=!joke.hide">Tell Me</button>
 
 </div>
   `
