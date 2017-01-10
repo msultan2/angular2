@@ -74,7 +74,7 @@ class JokeComponent {
 @Component({
 	selector: 'joke-list',
 	template: `
-	<joke-form> (jokeCreated)="addJoke($event)"</joke-form>
+	<joke-form (jokeCreated)="addJoke($event)"></joke-form>
         <joke *ngFor="let j of jokes" [joke]="j"></joke> 
   `
 })
@@ -88,6 +88,10 @@ class JokeListComponent {
       new Joke("A kid threw a lump of cheddar at me", "I thought ‘That’s not very mature’")
         ]
   }
+  
+  addJoke(joke){
+    this.jokes.unshift(joke); //unshift: adds in head of array
+  }
 }
 
 @Component({
@@ -100,7 +104,8 @@ class AppComponent{
 
 @NgModule({
 	imports: [BrowserModule],
-	declarations: [JokeListComponent,JokeComponent,AppComponent,JokeFormComponent],
+	declarations: [JokeListComponent,JokeComponent,
+	                AppComponent,JokeFormComponent],
 	bootstrap: [AppComponent]
 })
 class AppModule {
