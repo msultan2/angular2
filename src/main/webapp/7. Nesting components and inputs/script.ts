@@ -22,6 +22,22 @@ class Joke{
 
 let joke = new Joke("What did the cheese say when it looked in the mirror?","Hello-Me (Halloumi)");
 
+@Component({
+  selector: 'joke',
+  template: `
+    <h1>{{setup}}</h1>
+    <p>{{punchline}}</p>
+  `
+})
+class JokeComponent {
+  setup: string;        //Properties: Type
+  punchline: string;
+  
+  constructor(){
+    this.setup = "What did the cheese say when it looked in the mirror?";
+    this.punchline = "Halloumi (Hello Me)";
+  }
+}
 
 @Component({
 	selector: 'joke-list',
