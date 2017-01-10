@@ -12,11 +12,11 @@ import {Component} from '@angular/core';
 	<p class="card-text"
 	   [hidden]="joke.hide">{{joke.punchline}}</p>
 	<button class="btn btn-primary"
-	    (click)="joke.hide=!joke.hide">Tell Me</button>
+	    (click)="toggle(joke)">Tell Me</button>
 
 </div>
   `
-  //	(click)="toggle(joke)">Tell Me</a>
+  
 })
 class JokeListComponent {
 	jokes: Object[];
