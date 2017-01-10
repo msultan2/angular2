@@ -23,6 +23,33 @@ class Joke{
 let joke = new Joke("What did the cheese say when it looked in the mirror?","Hello-Me (Halloumi)");
 
 @Component({
+	selector: 'joke-form',
+	template: `
+<div class="card card-block">
+  <h4 class="card-title">Create Joke</h4>
+  <div class="form-group">
+    <input type="text"
+           class="form-control"
+           placeholder="Enter the setup">
+  </div>
+  <div class="form-group">
+    <input type="text"
+           class="form-control"
+           placeholder="Enter the punchline">
+  </div>
+  <button type="button"
+          class="btn btn-primary">Create
+  </button>
+</div>
+  `
+})
+class JokeFormComponent {
+  
+}
+
+
+
+@Component({
   selector: 'joke',
   template: `
 <div class="card card-block">
@@ -43,7 +70,6 @@ class JokeComponent {
 	selector: 'joke-list',
 	template: `
 	<joke-form> (jokeCreated)="addJoke($event)"</joke-form>
-	</form>
         <joke *ngFor="let j of jokes" [joke]="j"></joke> 
   `
 })
@@ -69,7 +95,7 @@ class AppComponent{
 
 @NgModule({
 	imports: [BrowserModule],
-	declarations: [JokeListComponent,JokeComponent,AppComponent],
+	declarations: [JokeListComponent,JokeComponent,AppComponent,JokeFormComponent],
 	bootstrap: [AppComponent]
 })
 class AppModule {
