@@ -38,13 +38,18 @@ let joke = new Joke("What did the cheese say when it looked in the mirror?","Hel
            placeholder="Enter the punchline">
   </div>
   <button type="button"
-          class="btn btn-primary">Create
+          class="btn btn-primary"
+          (click)="createJoke()">Create
   </button>
 </div>
   `
 })
 class JokeFormComponent {
   @Output() jokeCreated=new EventEmitter<Joke>();
+  
+  createJoke(){
+    this.jokeCreated.emit(new Joke("A Setup","A punchline"));
+  }
 }
 
 
