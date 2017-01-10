@@ -44,7 +44,6 @@ class JokeComponent {
 	template: `
         <joke *ngFor="let j of jokes"></joke> 
   `
-  
 })
 class JokeListComponent {
 	jokes: Joke[];
@@ -58,12 +57,20 @@ class JokeListComponent {
   }
 }
 
+@Component({
+	selector: 'app',
+	template: `<joke-list></joke-list>`
+})
+class AppComponent{
+    
+}
+
 @NgModule({
 	imports: [BrowserModule],
-	declarations: [JokeListComponent],
-	bootstrap: [JokeListComponent]
+	declarations: [JokeListComponent,JokeComponent,AppComponent],
+	bootstrap: [AppComponent]
 })
-export class AppModule {
+class AppModule {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
