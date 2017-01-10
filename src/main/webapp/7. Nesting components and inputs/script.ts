@@ -1,7 +1,7 @@
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 
 class Joke{
@@ -25,7 +25,7 @@ let joke = new Joke("What did the cheese say when it looked in the mirror?","Hel
 @Component({
   selector: 'joke',
   template: `
-<div class="card card-block"
+<div class="card card-block">
 	<h4 class="card-title">{{joke.setup}}</h4>
 	<p class="card-text"
 	   [hidden]="joke.hide">{{joke.punchline}}</p>
@@ -36,13 +36,13 @@ let joke = new Joke("What did the cheese say when it looked in the mirror?","Hel
   `
 })
 class JokeComponent {
-  joke: Joke; 
+  @Input() joke: Joke; 
 }
 
 @Component({
 	selector: 'joke-list',
 	template: `
-        <joke *ngFor="let j of jokes"></joke> 
+        <joke *ngFor="let j of jokes" [joke]="j"></joke> 
   `
 })
 class JokeListComponent {
@@ -71,6 +71,6 @@ class AppComponent{
 	bootstrap: [AppComponent]
 })
 class AppModule {
-}
+} 
 
 platformBrowserDynamic().bootstrapModule(AppModule);
