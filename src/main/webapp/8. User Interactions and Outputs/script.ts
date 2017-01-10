@@ -42,6 +42,8 @@ class JokeComponent {
 @Component({
 	selector: 'joke-list',
 	template: `
+	<joke-form> (jokeCreated)="addJoke($event)"</joke-form>
+	</form>
         <joke *ngFor="let j of jokes" [joke]="j"></joke> 
   `
 })
