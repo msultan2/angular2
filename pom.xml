@@ -5,9 +5,9 @@
     <groupId>com.mycompany</groupId>
     <artifactId>Angular2</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
 
-    <name>MyAngular2</name>
+    <name>Angular2</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -73,4 +73,7 @@
         </plugins>
     </build>
 
+  <modules>
+    <module>MyAngular2</module>
+  </modules>
 </project>
