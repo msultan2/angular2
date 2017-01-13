@@ -76,5 +76,6 @@
   <modules>
     <module>MyAngular2</module>
     <module>courseMaterials</module>
+    <module>myCli</module>
   </modules>
 </project>
