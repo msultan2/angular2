@@ -9,7 +9,7 @@ let list2: Array<number> = [1, 2, 3];
 
 // Function
 let fun: Function = () => console.log("Hello");
-function returnNumber(): number {
+function returnNumber(): number { //to sclare the return type
   return 1;
 }
 
@@ -41,7 +41,7 @@ notsure = "hello"; // This is fine since we don't do type checking with any
 
 // Type Assertion
 let value: any = "Asim Hussain";
-let length: number = (<string>value).length;
+let length: number = (<string>value).length; //to cast the any  object to String
 
 
 // Generics
