@@ -43,7 +43,7 @@ class JokeFormComponent {
   template: `
 <div class="card card-block">
   <h4 class="card-title">
-    <ng-content select=".setup"></ng-content>
+    <ng-content select=".setup"></ng-content>  //means select based on classname you can write select="span" to be based on type
   </h4>
   <p class="card-text"
      [hidden]="data.hide">
