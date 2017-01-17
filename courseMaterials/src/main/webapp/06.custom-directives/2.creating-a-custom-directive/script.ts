@@ -31,12 +31,14 @@ class Joke {
 
 @Directive({
   selector: "[ccCardHover]"
+  // selector: ".ccCardHover" //to act in class
 })
 class CardHoverDirective {
   constructor(private el: ElementRef,
               private renderer: Renderer) {
+    // el.nativeElement.style.backgroundColor='gray';  //depends on browser only (running DOM)
     //noinspection TypeScriptUnresolvedVariable,TypeScriptUnresolvedFunction
-    renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'gray');
+    renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'gray'); 
   }
 }
 
@@ -44,6 +46,7 @@ class CardHoverDirective {
   selector: 'joke',
   template: `
 <div class="card card-block" ccCardHover>
+<!--<div class="card card-block ccCardHover"> to be put in class-->
   <h4 class="card-title">{{data.setup}}</h4>
   <p class="card-text"
      [hidden]="data.hide">{{data.punchline}}</p>
